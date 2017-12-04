@@ -1,22 +1,18 @@
-//variables
-$accent-color: #00c8f8;
-$background-color: #444444;
-$header-color: #232323;
-$font-color: #ffffff;
+@import "variables";
 
-//lmao to watch those videos again and take fricken notes this time //
 
-//
 .headerBkgd {
   height: 150px;
   width: 100%;
-  color: $header-color;
-  font: $font-color;
+  background-color: $header-color;
+  .text{
+    font: $font-color;
+    text-align: center;}
 }
 
 .background {
   width: 100%;
-  height: 100%;
-  color: $background-color;
+  height: 500px;
+  background-color: $background-color;
   font: $font-color;
 }

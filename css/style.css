@@ -1,0 +1,15 @@
+.headerBkgd {
+  height: 150px;
+  width: 100%;
+  background-color: #232323; }
+  .headerBkgd .text {
+    font: #ffffff;
+    text-align: center; }
+
+.background {
+  width: 100%;
+  height: 500px;
+  background-color: #444444;
+  font: #ffffff; }
+
+/*# sourceMappingURL=style.css.map */
