@@ -17,19 +17,21 @@
   margin-top: 0; }
   .background .toDoItem {
     padding-left: 5px;
+    margin-top: 10px;
     margin-left: 10px;
     border-width: thin;
     border-color: #0EA46F;
     font-size: 18px; }
-  .background .qText {
-    color: #ffffff;
-    padding-top: 10px;
-    margin-left: 10px; }
   .background button {
     background-color: #0EA46F;
     font-size: 18px;
     color: #ffffff;
     border: #0EA46F; }
+  .background .wrapper {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 20% 70%;
+    grid-template-rows: 100% 100%; }
   .background .content-text {
     color: #ffffff;
     text-transform: uppercase;
