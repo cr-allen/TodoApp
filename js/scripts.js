@@ -34,6 +34,7 @@ var createNewItem = function taskString() {
   todoItem.appendChild(deleteButton);
   return todoItem;
 };
+////^^^^ONCLICK ISN'T WORKING WTF RESEARCH IT
 
 ///add task
 var addTask = function functionName() {
@@ -44,6 +45,7 @@ var addTask = function functionName() {
   //specifics
   var editable = document.querySelector("li");
   li.className="editMode"
+
 
   taskInput="";
 };
@@ -66,13 +68,22 @@ var editTask=function() {
   var taskInput=this.parentNode; //binds to checkbox
   var label = querySelector("label"); //grabs label
   var containsClass=listItem.classList.contains("editMode"); //element might need to be li??
-
-
+  if (containsClass) {
+    label.innerText=editInput.value;
+  } else {
+    editInput.value=label.innerText;
+  }
+  listItem.classList.toggle("editMode");
 };
-//// will call on taskInput, turn it back into an input. add submit button??
+//// ^^^ will call on taskInput, turn it back into an input. add submit button??
 
 
 ///delete task
+var deleteTask = function () {
+  var listItem=this.parentNode; // binds to ul?
+  var ul=listItem.parentNode; //not sure
+  ul.removeChild(listItem);
+};
 
 
 ///date task - date picker that will sit between input and button.
@@ -85,11 +96,16 @@ var editTask=function() {
 
 
 ///task done
+var finishedItems = function () {
+  var listItem=this.parentNode; //binds to checkbox again
+  done.appendChild(listItem);
+    bindTaskEvents(listItem, taskIncomplete)
+};
 
 
+///task taskIncomplete - necessary so can be used in bindTaskEvents arguments
 
 
 
 
 //event listeners
-addButton.onclick=addTask;
