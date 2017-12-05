@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACA,sCAAsC",
+"sources": ["mixins.scss"],
 "names": [],
 "file": "mixins.css"
 }

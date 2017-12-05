@@ -15,14 +15,29 @@
 </head>
 <body>
   <div class="headerBkgd">
-    <h1 class="text">To Do</h1>
+    <div class="header-text">
+      <h1 class="h1-text">To Do</h1>
+    </div>
   </div>
   <div class="background">
-    <button type="text" class="submit">
-    <section class="toDo" contenteditable="true">
-      <div class="wrapper">
-        <ul class="toDo"></ul>
-        <ul class="done"></ul>
+    <row>
+      <p class="qText">What do you need to do today?</p>
+        <input type="text" class="toDoItem">
+        <button type="button" name="button">add</button>
+      <section class="toDo" contenteditable="true">
+        <div class="wrapper">
+          <col span="2">
+          <h2 class="content-text">Do</h2>
+          <ul id="toDo">
+            <!-- will want this to be editable and deletable. drag 'n' drop functionality??  -->
+            <li>dance</li>
+          </ul>
+          <h2 class="content-text">Done</h2>
+          <ul id="done">
+            <li>dance</li>
+          </ul>
+        </col>
+      </row>
       </div>
     </section>
   </div>

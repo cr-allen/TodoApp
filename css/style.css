@@ -1,15 +1,44 @@
+/*# sourceMappingURL=mixins.css.map */
 .headerBkgd {
   height: 150px;
   width: 100%;
   background-color: #232323; }
-  .headerBkgd .text {
-    font: #ffffff;
-    text-align: center; }
+  .headerBkgd .h1-text {
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 50px; }
 
 .background {
   width: 100%;
   height: 500px;
   background-color: #444444;
-  font: #ffffff; }
+  color: #ffffff;
+  margin-top: 0; }
+  .background .toDoItem {
+    padding-left: 5px;
+    margin-left: 10px;
+    border-width: thin;
+    border-color: #0EA46F;
+    font-size: 18px; }
+  .background .qText {
+    color: #ffffff;
+    padding-top: 10px;
+    margin-left: 10px; }
+  .background button {
+    background-color: #0EA46F;
+    font-size: 18px;
+    color: #ffffff;
+    border: #0EA46F; }
+  .background .content-text {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center; }
+  .background ul {
+    float: left;
+    content: "";
+    clear: both;
+    display: grid; }
 
 /*# sourceMappingURL=style.css.map */
