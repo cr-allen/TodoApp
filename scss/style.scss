@@ -23,15 +23,21 @@
   background-color: $background-color;
   color: $font-color;
 
+  form {
+    padding-top: 20px;
+    padding-right: 5px;
+  }
+
   .toDoItem {
     border-width: 2px;
     border-color: $accent-color;
-    font-size: 25px;
+    font-size: 18px;
     font-family: $body-font;
     margin-top: $padding-userInput;
   }
   .date {
     font-family: $body-font;
+    font-size: 15px;
     border-width: 2px;
     border-color: $accent-color;
     margin-left: $padding-left;
@@ -41,10 +47,12 @@
     font-size: 18px;
     color: $font-color;
     border: $accent-color;
+    border-width: medium;
     font-family: $body-font;
+    margin-right: 5px;
   }
   .wrapper{
-    padding-top:30px;
+
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100% 100%;

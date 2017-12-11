@@ -16,14 +16,18 @@
   height: 533px;
   background-color: #444444;
   color: #ffffff; }
+  .background form {
+    padding-top: 20px;
+    padding-right: 5px; }
   .background .toDoItem {
     border-width: 2px;
     border-color: #0EA46F;
-    font-size: 25px;
+    font-size: 18px;
     font-family: "Montserrat", sans-serif;
     margin-top: 20px; }
   .background .date {
     font-family: "Montserrat", sans-serif;
+    font-size: 15px;
     border-width: 2px;
     border-color: #0EA46F;
     margin-left: 5px; }
@@ -32,9 +36,10 @@
     font-size: 18px;
     color: #ffffff;
     border: #0EA46F;
-    font-family: "Montserrat", sans-serif; }
+    border-width: medium;
+    font-family: "Montserrat", sans-serif;
+    margin-right: 5px; }
   .background .wrapper {
-    padding-top: 30px;
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100% 100%;

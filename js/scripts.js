@@ -8,6 +8,7 @@ var done=document.querySelector("#done");
 var date = document.querySelector("#date");
 
 console.log(addButton);
+console.log(date);
 // functions and constructors
 
 ///functions
@@ -18,8 +19,7 @@ var createNewItem = function(taskString) {
   var todoItem = document.createElement("li");
   var label = document.createElement("label");
   var checkboxInput = document.createElement("input") ;
-  // var editInput = document.createElement("input");
-  var editButton = document.createElement("button"); //not showing up WHY
+  var editButton = document.createElement("button");
   var deleteButton = document.createElement("button");
   var dueDate = document.createElement('p')
 
@@ -28,8 +28,7 @@ var createNewItem = function(taskString) {
 
   //specifics for elements
   checkboxInput.type="checkbox";
-  // editInput.type="text";
-  editButton.className="edit"
+  editButton.innerText="edit"
   deleteButton.innerText="delete";
   deleteButton.className="deleteItem";
 
@@ -37,10 +36,9 @@ var createNewItem = function(taskString) {
   //appends
   todoItem.appendChild(label);
   todoItem.appendChild(checkboxInput);
-  // todoItem.appendChild(editInput);
   todoItem.appendChild(editButton);
   todoItem.appendChild(deleteButton);
-  toDoItem.setAttribute("class","editMode");
+  todoItem.setAttribute("class","editMode");
   return todoItem;
     console.log("stuff");
 };
@@ -82,6 +80,7 @@ var bindTaskEvents=function(todoItem,checkboxEvent) {
 
 ///edit task <--- does NOTHING
 var editTask=function() {
+  console.log('edit task successful');
   var label = document.querySelector("label"); //grabs label
   var containsClass=todoItem.classList.contains("editMode"); //element might need to be li??
   if (containsClass) {
@@ -96,11 +95,12 @@ var editTask=function() {
 
 ///delete task
 var deleteTask = function() {
+  var listItem=this.parentNode;
   var ul= document.querySelector('ul');
   var li= document.querySelector('li');
   ul.removeChild('li');
 };
-
+///getting error " TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node' at HTMLButtonElement.deleteTask (scripts.js:101)deleteTask @ scripts.js:101"
 
 ///task done = works!!!
 var finishedItems = function() {
@@ -110,6 +110,16 @@ var finishedItems = function() {
     bindTaskEvents(listItem);
 };
 
+
+var taskComplete=function(){
+		console.log("Complete Task...");
+
+	//Append the task list item to the #completed-tasks
+	var listItem=this.parentNode;
+	completedTasksHolder.appendChild(listItem);
+				bindTaskEvents(listItem, taskIncomplete);
+
+}
 
 //event listeners - need function??
 addButton.addEventListener("click", addTask);
