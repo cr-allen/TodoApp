@@ -10,39 +10,50 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-  <div class="headerBkgd">
-    <div class="header-text">
-      <h1 class="h1-text">To Do</h1>
-    </div>
-  </div>
-  <div class="background">
-        <input type="text" class="toDoItem">
-        <button type="button" name="button" class="addButton">add</button>
-      <section class="lists" contenteditable="true">
-        <div class="wrapper">
-          <h2 class="content-text">Do</h2>
-          <ul id="toDo">
-            <!-- may need to attach editMode to lis  -->
-            <li>dance</li>
-            <li>throw a party</li>
-          </ul>
-          <h2 class="content-text">Done</h2>
-          <ul id="done">
-            <li>dance no more</li>
-          </ul>
-        </col>
-      </row>
+  <div class="container-fluid">
+    <row>
+      <div class="headerBkgd col-md-12">
+        <div class="header-text">
+          <h1 class="h1-text">To.Do</h1>
+        </div>
       </div>
-    </section>
+    </row>
+    <row>
+      <div class="background col-md-12">
+          <form action="text" class="userInput" align="center">
+            <input type="text" id="toDoItem">
+            <input id="date" type="date" class="date">
+            <button id="addButton" type="button">add</button>
+          </form>
+          <section class="lists">
+            <!-- contenteditable="true" is the ony reason this works at all, even sort of lmao. remove when fixed -->
+            <div class="wrapper">
+              <h2 class="content-text">Do</h2>
+              <ul id="toDo">
+                <!-- may need to attach editMode to lis  -->
+              </ul>
+              <h2 class="content-text">Done</h2>
+              <ul id="done">
+              </ul>
+            </col>
+          </div>
+          </section>
+      </div>
+    </row>
   </div>
 
 
 
   <script type="text/javascript" src="js/scripts.js"><!-- nothing goes here!! --></script>
+  <!-- <script src="pikaday.js"></script> -->
+  <!-- <script>
+      var picker = new Pikaday({ field: document.getElementById('datepicker') });
+  </script> -->
 
 </body>
 </html>

@@ -1,46 +1,62 @@
 /*# sourceMappingURL=mixins.css.map */
 .headerBkgd {
-  height: 150px;
+  height: 100px;
   width: 100%;
-  background-color: #232323; }
+  background-color: #232323;
+  margin: 0px; }
   .headerBkgd .h1-text {
     color: #ffffff;
     text-align: center;
-    text-transform: uppercase;
-    padding-top: 50px; }
+    font-size: 50px;
+    padding-top: 20px;
+    font-family: "Lora", serif; }
 
 .background {
   width: 100%;
-  height: 500px;
+  height: 533px;
   background-color: #444444;
-  color: #ffffff;
-  margin-top: 0; }
+  color: #ffffff; }
   .background .toDoItem {
-    padding-left: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-width: thin;
+    border-width: 2px;
     border-color: #0EA46F;
-    font-size: 18px; }
+    font-size: 25px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 20px; }
+  .background .date {
+    font-family: "Montserrat", sans-serif;
+    border-width: 2px;
+    border-color: #0EA46F;
+    margin-left: 5px; }
   .background button {
     background-color: #0EA46F;
     font-size: 18px;
     color: #ffffff;
-    border: #0EA46F; }
+    border: #0EA46F;
+    font-family: "Montserrat", sans-serif; }
   .background .wrapper {
     padding-top: 30px;
     display: grid;
-    grid-template-columns: 20% 70%;
-    grid-template-rows: 100% 100%; }
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100% 100%;
+    font-family: "Montserrat", sans-serif; }
   .background .content-text {
     color: #ffffff;
     text-transform: uppercase;
     font-size: 20px;
-    text-align: center; }
+    text-align: center;
+    font-family: "Lora", serif; }
   .background ul {
     float: left;
     content: "";
     clear: both;
-    display: grid; }
+    display: grid;
+    list-style: none; }
+  .background ul li:before {
+    color: #0EA46F;
+    padding-right: .25em;
+    padding-top: 1%;
+    content: "\2022";
+    font-size: 3em;
+    top: 0em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,59 +3,72 @@
 
 
 .headerBkgd {
-  height: 150px;
+  height: 100px;
   width: 100%;
   background-color: $header-color;
+  margin: 0px;
   .h1-text{
     color: $font-color;
     text-align: center;
-    text-transform: uppercase;
-    padding-top: 50px;
+    font-size: 50px;
+    padding-top: 20px;
+    font-family: $header-font;
   }
 
 }
 
 .background {
   width: 100%;
-  height: 500px;
+  height: 533px;
   background-color: $background-color;
   color: $font-color;
-  margin-top: 0;
-  .toDoItem {
-    padding-left: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-width: thin;
-    border-color: $accent-color;
-    font-size: 18px;
-  }
 
+  .toDoItem {
+    border-width: 2px;
+    border-color: $accent-color;
+    font-size: 25px;
+    font-family: $body-font;
+    margin-top: $padding-userInput;
+  }
+  .date {
+    font-family: $body-font;
+    border-width: 2px;
+    border-color: $accent-color;
+    margin-left: $padding-left;
+  }
   button{
     background-color: $accent-color;
     font-size: 18px;
     color: $font-color;
     border: $accent-color;
+    font-family: $body-font;
   }
   .wrapper{
     padding-top:30px;
     display: grid;
-    grid-template-columns: 20% 70%;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 100% 100%;
+    font-family: $body-font;
   }
   .content-text{
     color: $font-color;
     text-transform: uppercase;
     font-size: 20px;
     text-align: center;
+    font-family: $header-font;
   }
   ul {
     float: left;
     content: "";
     clear: both;
     display: grid;
+    list-style: none;
   }
+  ul li:before {
+  color: $accent-color;
+  padding-right: .25em;
+  padding-top: 1%;
+  content: "\2022";
+  font-size: 3em;
+  top: 0em; }
 }
-
-
-
-//
