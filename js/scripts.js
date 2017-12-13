@@ -1,5 +1,3 @@
-// research: functions, calling functions, uuuh, dissect the codepen better. also css grids //
-
 //var query selectors
 var taskInput=document.querySelector("#toDoItem");
 var addButton=document.querySelector("#addButton");
@@ -7,8 +5,6 @@ var toDo=document.querySelector("#toDo");
 var done=document.querySelector("#done");
 var date = document.querySelector("#date");
 
-console.log(addButton);
-console.log(date);
 // functions and constructors
 
 ///functions
@@ -19,7 +15,7 @@ var createNewItem = function(taskString) {
   var label = document.createElement("label");
   var checkboxInput = document.createElement("input") ;
   var editButton = document.createElement("button");
-  // var editInput = document.createElement('input')
+  var editInput = document.createElement('input')
   var deleteButton = document.createElement("button");
   var dueDate = document.createElement('p')
 
@@ -27,15 +23,15 @@ var createNewItem = function(taskString) {
 
   //specifics for elements
   checkboxInput.type="checkbox";
-  // editInput.type="text";
-  // editInput.className="editInput";
+  editInput.type="text";
+  editInput.className="editInput";
   checkboxInput.onchange = checkboxChange;
-  editButton.innerText="edit"
-  editButton.onclick=editTask;
-  deleteButton.onclick=deleteTask;
+  editButton.innerText="change"; //so named bc 'change' is more flexible, functions as both 'edit' and 'save'
+  editButton.addEventListener=('click', editTask);
+  deleteButton.addEventListener=('click',deleteTask);
   deleteButton.innerText="delete";
   deleteButton.className="deleteItem";
-  todoItem.className="editMode"
+  todoItem.className="editMode";
 
 
   //appends
@@ -55,7 +51,7 @@ var createNewItem = function(taskString) {
 var addTask = function() {
   console.log('adding tasks');
   var listItem = createNewItem(taskInput.value);
-  // var dueDate = createNewItem(date.value)
+  // var dueDate = functionToBeBuilt(date.value)
   toDo.appendChild(listItem);
 
   //specifics
@@ -66,18 +62,34 @@ var addTask = function() {
   console.log(listItem);
 };
 
+
+
+// ///deadline
+// var deadline = function deadlineCountdown() {
+//   var time = new Date().getDays();
+//   if (time < 1) {
+//     document.querySelector("p").innerHTML = "due today!";
+//   };
+//   if (time < 2) {
+//     document.querySelector("p").innerHTML = "due tomorrow!"
+//   };
+// };
+
 ///edit task <--- does NOTHING
 var editTask=function() {
   console.log('edit task ENGAGE');
   var listItem=this.parentNode;
   var label = document.querySelector("label"); //grabs label
   let editInput = document.querySelector('input[type=text]');
-  // let editButton = document.querySelector("#editButton");
+  let editButton = document.querySelector("#editButton");
   var containsClass=label.classList.contains("editMode"); //element might need to be li??
-  console.log("stuff");
+  console.log(editInput);
+  console.log("var = containsClass is working");
   if (containsClass) {
     label.innerText=editInput.value;
+    console.log("if editInput.value is working");
   } else {
+    debugger;
     editInput.value=label.innerText;
   }
   listItem.classList.toggle("editMode");
@@ -96,19 +108,23 @@ var deleteTask = function() {
 
 ///task done = works!!! or it used to, bitterest of lmaos
 var checkboxChange = function() {
-  console.log(this);
-  var listItem=this.parentNode; //binds to checkbox again
-  done.appendChild(listItem);
+  // console.log(this);
+  var listItem=this.parentNode;
+  var checkbox = document.querySelector("input[type='checkbox']")
+  console.log(checkbox);
+  if (checkbox.value="true") {
+    done.appendChild(listItem);
+  } else {
+    // console.log("moved to done"); //wtf why isn't this working
+    toDo.appendChild(listItem);
+    // console.log("movied to toDo");
+  };
   // use an if else statement   checkbox.value boolean
 };
+console.log(checkboxChange);
+////runs fine until hit the else half of the statement wtf.
 
-var taskIncomplete=function(){
-	console.log("Incomplete Task...");
-	var listItem=this.parentNode;
-	toDo.appendChild(listItem);
-};
-
-//event listeners - need function??
+//event listener
 addButton.addEventListener("click", addTask);
 
 //for loops
