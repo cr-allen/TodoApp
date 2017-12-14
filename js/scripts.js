@@ -75,16 +75,15 @@ var addTask = function() {
 var editTask=function() {
   console.log('edit task ENGAGE');
   var listItem=this.parentNode;
-  var todoItem = document.querySelector("li");
+  var label = document.querySelector("label");
   let editInput = document.querySelector('input[type=text]');
   let editButton = document.querySelector("#editButton");
   var containsClass=toDoItem.classList.contains("editMode");
-  console.log(todoItem);
   if (containsClass) {
-    todoItem.innerText=editInput.value;
-    console.log("if editInput.value is working");
+    label.innerText=editInput.value;
+    console.log('yo');
   } else {
-    editInput.value=todoItem.innerText;
+    editInput.value=label.innerText;
     console.log("agfg");
   }
   listItem.classList.toggle("editMode");
