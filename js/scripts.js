@@ -93,10 +93,9 @@ var editTask=function() {
 
 ///delete task
 var deleteTask = function() {
-  var listItem=this.parentNode;
   var ul= document.querySelector('ul');
   var li= document.querySelector('li');
-  ul.removeChild('li');
+  li.removeChild('ul');
 };
 ///getting error " TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node' at HTMLButtonElement.deleteTask (scripts.js:101)deleteTask @ scripts.js:101"
 
