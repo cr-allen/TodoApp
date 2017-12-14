@@ -26,21 +26,20 @@ var createNewItem = function(taskString) {
   editInput.className="editInput";
   checkboxInput.onchange = checkboxChange;
   editButton.innerText="change"; //'change' is more flexible, functions as both 'edit' and 'save'
-  editButton.addEventListener=('click', editTask);
-  deleteButton.addEventListener=('click', deleteTask);
+  editButton.addEventListener('click', editTask);
+  deleteButton.addEventListener('click', deleteTask);
   deleteButton.innerText="delete";
   deleteButton.className="deleteItem";
-  todoItem.className="editMode";
-
+  label.className="editMode";
 
   //appends
   todoItem.appendChild(label);
   todoItem.appendChild(checkboxInput);
   todoItem.appendChild(editButton);
   todoItem.appendChild(deleteButton);
-  todoItem.setAttribute("class","editMode");
+  // todoItem.setAttribute("class", "editMode");
   return todoItem;
-  console.log("item created");
+  console.log(toDoItem);
 };
 ////^^^^set attribute for editMode and trigger edit onclick of button
 
@@ -58,9 +57,7 @@ var addTask = function() {
   editable.className="editMode"
 
   taskInput.value="";
-  console.log(listItem);
 };
-
 
 
 // ///deadline
@@ -78,18 +75,17 @@ var addTask = function() {
 var editTask=function() {
   console.log('edit task ENGAGE');
   var listItem=this.parentNode;
-  var label = document.querySelector("label"); //grabs label
+  var todoItem = document.querySelector("li");
   let editInput = document.querySelector('input[type=text]');
   let editButton = document.querySelector("#editButton");
-  var containsClass=label.classList.contains("editMode"); //element might need to be li??
-  console.log(editInput);
-  console.log("var = containsClass is working");
+  var containsClass=toDoItem.classList.contains("editMode");
+  console.log(todoItem);
   if (containsClass) {
-    label.innerText=editInput.value;
+    todoItem.innerText=editInput.value;
     console.log("if editInput.value is working");
   } else {
-    debugger;
-    editInput.value=label.innerText;
+    editInput.value=todoItem.innerText;
+    console.log("agfg");
   }
   listItem.classList.toggle("editMode");
 };
@@ -105,7 +101,7 @@ var deleteTask = function() {
 };
 ///getting error " TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node' at HTMLButtonElement.deleteTask (scripts.js:101)deleteTask @ scripts.js:101"
 
-///task done 'if' works, 'else' does not.
+///task done
 var checkboxChange = function() {
   // console.log(this);
   var listItem=this.parentNode;
@@ -119,7 +115,7 @@ var checkboxChange = function() {
     // console.log("movied to toDo");
   };
 };
-console.log(checkboxChange);
+// console.log(checkboxChange);
 ////runs fine until hit the else half of the statement wtf.
 
 //event listener
