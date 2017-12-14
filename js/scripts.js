@@ -5,9 +5,8 @@ var toDo=document.querySelector("#toDo");
 var done=document.querySelector("#done");
 var date = document.querySelector("#date");
 
-// functions and constructors
+// functions
 
-///functions
 /// create new task
 var createNewItem = function(taskString) {
   // need to bind this to the form
@@ -26,9 +25,9 @@ var createNewItem = function(taskString) {
   editInput.type="text";
   editInput.className="editInput";
   checkboxInput.onchange = checkboxChange;
-  editButton.innerText="change"; //so named bc 'change' is more flexible, functions as both 'edit' and 'save'
+  editButton.innerText="change"; //'change' is more flexible, functions as both 'edit' and 'save'
   editButton.addEventListener=('click', editTask);
-  deleteButton.addEventListener=('click',deleteTask);
+  deleteButton.addEventListener=('click', deleteTask);
   deleteButton.innerText="delete";
   deleteButton.className="deleteItem";
   todoItem.className="editMode";
@@ -106,20 +105,19 @@ var deleteTask = function() {
 };
 ///getting error " TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node' at HTMLButtonElement.deleteTask (scripts.js:101)deleteTask @ scripts.js:101"
 
-///task done = works!!! or it used to, bitterest of lmaos
+///task done 'if' works, 'else' does not.
 var checkboxChange = function() {
   // console.log(this);
   var listItem=this.parentNode;
   var checkbox = document.querySelector("input[type='checkbox']")
-  console.log(checkbox);
-  if (checkbox.value="true") {
+  console.log(checkbox.checked);
+  if (checkbox.checked==true) {
     done.appendChild(listItem);
   } else {
     // console.log("moved to done"); //wtf why isn't this working
     toDo.appendChild(listItem);
     // console.log("movied to toDo");
   };
-  // use an if else statement   checkbox.value boolean
 };
 console.log(checkboxChange);
 ////runs fine until hit the else half of the statement wtf.
